@@ -1,0 +1,27 @@
+<% include ./partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">
+        <%= diary.title %>    
+    </div>
+    <div class="ui top attached">
+        <div class="item">
+            <img class="ui centered rounded image" src="<%= diary.image %>">
+            <div class="content">
+                <span><%= diary.date.toDateString() %></span>
+            </div>
+            <div class="description">
+                <p><%- diary.content %></p>
+            </div>
+            <a class="ui positive basic button big" href="/diary/<%= diary._id %>/edit">Edit</a>
+            <form id="remove" action="/diary/<%= diary._id %>?_method=DELETE" method="POST">
+                <button class="ui negative basic button big">Delete</button>
+            </form>
+        </div>
+    </div>
+    
+    
+    
+</div>
+
+<% include ./partials/footer %>
